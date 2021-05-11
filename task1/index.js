@@ -1,11 +1,32 @@
-import model from "./models/data.js";
+import model from "../models/data.js";
 
-gantt.init("gantt_here");
+gantt.config.date_grid = "%d %M %Y";
+gantt.config.scales = [
+  {
+    unit: "month",
+    step: 1,
+    format: "%M %Y"
+  },
+  {
+    unit: "day",
+    step: 1,
+    format: "%d"
+  }
+]
 
+gantt.templates.task_class = (start, end, task) => {
+  if (task.progress > 0.75 && task.progress < 0.9) {
+    return "red-task";
+  } else if(task.progress >= 0.9) {
+    return "bolt-task";
+  }
+}
+
+gantt.templates.rightside_text = (start, end, task) => {
+  return task.progress === 1 ? "done" : false;
+}
+
+gantt.init("gantt");
 gantt.parse({
-  data: model,
-  links: [
-    {id: 1, source: 1, target: 2, type: "1"},
-    {id: 2, source: 2, target: 3, type: "0"}
-  ]
+  data: model
 });
