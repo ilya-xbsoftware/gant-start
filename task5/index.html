@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>task 5</title>
+  <script src="../codebase/dhtmlxgantt.js"></script>
+  <script src="./index.js" type="module"></script>
+  <link href="../codebase/dhtmlxgantt.css" rel="stylesheet">
+	<style>
+		html, body {
+			height: 100%;
+			padding: 0px;
+			margin: 0px;
+			overflow: hidden;
+    }
+
+    .completed-task{
+      pointer-events: none;
+      border: none;
+    }
+    
+    .completed-task.gantt_task_line.gantt_project{
+      border: none;
+    }
+
+    .completed-task .gantt_task_content{
+      background-color: rgb(168, 162, 162);
+    }
+
+
+	</style>
+</head>
+<body>
+	<section id="gantt" style='width:100%; height:100%;'></section>
+</body>
