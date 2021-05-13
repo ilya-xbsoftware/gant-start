@@ -9,7 +9,7 @@ gantt.templates.task_text = function (start, end, task) {
 gantt.addTaskLayer({
   renderer: {
     render: (task) => {
-      const size = gantt.getTaskPosition(task)
+      const size = gantt.getTaskPosition(task);
       const icon = document.createElement("i");
       const deleteIconSize = 20;
       const iconLeftIndent = size.left + size.width - deleteIconSize;

@@ -3,13 +3,27 @@ import model from "../models/data.js";
 gantt.locale.labels["section_owner"] = "Owner";
 
 gantt.serverList("ownerList", [
-  {key: 1, label: "John"},
-  {key: 2, label: "Adam"},
-  {key: 3, label: "Diane"}
+  {
+    key: 1,
+    label: "John"
+  },
+  {
+    key: 2,
+    label: "Adam"
+  },
+  {
+    key: 3,
+    label: "Diane"
+  }
 ]);
 
 gantt.config.columns = [
-  {name: "text", label: "Task name", tree: true, width: '*'},
+  {
+    name: "text",
+    label: "Task name",
+    tree: true,
+    width: '*'
+  },
   {
     name: "owner",
     label: "Owner",
@@ -29,9 +43,25 @@ gantt.templates.rightside_text = (start, end, task) => {
 }
 
 gantt.config.lightbox.sections = [
-  {name: "description", height: 38, map_to: "text", type: "textarea", focus: true},
-  {name: "owner", height: 22, map_to: "owner_id", type: "select", options: gantt.serverList("ownerList")},
-  {name: "time", type: "duration", map_to: "auto"}
+  {
+    name: "description",
+    height: 38,
+    map_to: "text",
+    type: "textarea",
+    focus: true
+  },
+  {
+    name: "owner",
+    height: 22,
+    map_to: "owner_id",
+    type: "select",
+    options: gantt.serverList("ownerList")
+  },
+  {
+    name: "time",
+    type: "duration",
+    map_to: "auto"
+  }
 ];
 
 

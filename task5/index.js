@@ -18,10 +18,11 @@ gantt.config.scales = [
 ]
 
 gantt.templates.task_class = function (start, end, task) {
-  const markerDate = gantt.getMarker(todayMarker).start_date;
+  const marker = gantt.getMarker(todayMarker);
+  const markerDate = marker.start_date;
   const isItTaskOverdue = end <= markerDate;
   if (isItTaskOverdue) {
-    return "completed-task"
+    return "completed-task";
   }
 };
 
@@ -38,6 +39,11 @@ gantt.init("gantt");
 gantt.parse({
   data: model,
   links: [
-    {id:"2",source:3, target:5, type:1},
+    {
+      id: "2",
+      source: 3,
+      target: 5,
+      type: 1
+    },
   ]
 });

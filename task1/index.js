@@ -15,9 +15,11 @@ gantt.config.scales = [
 ]
 
 gantt.templates.task_class = (start, end, task) => {
-  if (task.progress >= 0.75 && task.progress < 0.9) {
+  const progress = task.progress
+  
+  if (progress >= 0.75 && progress < 0.9) {
     return "red-task";
-  } else if(task.progress >= 0.9) {
+  } else if(progress >= 0.9) {
     return "bolt-task";
   }
 }
