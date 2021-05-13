@@ -64,8 +64,6 @@ gantt.config.lightbox.sections = [
   }
 ];
 
-
-
 gantt.init("gantt");
 gantt.parse({
   data: model
@@ -75,5 +73,6 @@ function getName(data) {
   const ownerData = gantt.serverList("ownerList");
   const ownerId = data.owner_id;
   const name = ownerData[ownerId - 1].label;
+
   return name;
 }
