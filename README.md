@@ -39,3 +39,7 @@
 
 ### 6. Show free slack for the selected task:
 - Slack should be considered taking into account working hours;
+
+---
+
+#[Russian](https://docs.google.com/document/d/1GUNM641pTtJ7VfLY_Lf2k-rgiNpTzywqy8ca2u_NdLI/edit) version
